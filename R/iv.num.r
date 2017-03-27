@@ -41,7 +41,7 @@ iv.num <- function(df,x,y,verbose=FALSE,rcontrol=NULL) {
   t$tmp_iv_calc_label <- factor(t$tmp_iv_calc_label)
 
   if(verbose) cat("    DF Merge",sep="\n")
-  df <- merge(df, t["tmp_iv_calc_label"], by=0, all=TRUE) # str(df)
+  df <- cbind(df, t["tmp_iv_calc_label"]) # str(df)
   if(verbose) cat("  Calling iv.str for nodes",sep="\n")
   iv_data <- iv.str(df,"tmp_iv_calc_label",y)
 
